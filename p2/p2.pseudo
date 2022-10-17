@@ -1,0 +1,41 @@
+// CSE 262 - P2
+
+/*
+"(define func (x y) (+ x y)) (define func (x y) (+ x y))"
+-> ["(", "define", "func", "(", "x", "y", ")", ")"]
+-> [LParenToken, DefineToken, IdentifierToken, LParenToken, Identifier, Identifier, RParenToken, RParenToken]
+*/
+
+struct TokenFragment {
+    int line;
+    int col;
+    string value;
+};
+
+string source <- "(define func (x y) (+ x y))";
+
+TokenFragment[] tokens <- [];
+string[] delimiters <- ["(", ")", " ", "\n", "\'", "\"", "\t"];
+string[] blank <- [" ", "\n", "\t"]; // demiliters that are NOT tokens
+
+string temp <- "";
+
+for (line, lineNum) in (split source to lines):
+    for (char, colNum) in line:
+        if line[colNum] is in delimiters:
+            if temp is not empty:
+                append { temp, i, j - (length of temp) } to tokens;
+                temp <- "";
+            endif
+            if line[colNum] is not in blank
+                append { line[colNum], i, j } to tokens;
+            endif
+        else
+            append line[colNum] to temp;
+        endelse
+    endfor
+    if temp is not empty:
+        append { temp, i, (last index of temp in line) } to tokens;
+        temp <- "";
+    endif
+endfor
