@@ -1,0 +1,19 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write"
+  },
+  "devDependencies": {
+    "@types/node": "^18.8.5",
+    "@types/ungap__structured-clone": "^0.3.0",
+    "@types/xml-formatter": "^2.1.1",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "@ungap/structured-clone": "^1.0.1",
+    "xml-formatter": "^2.6.1"
+  }
+}
