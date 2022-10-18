@@ -1,8 +1,9 @@
-import Token, { TokenType } from './Token'
-import { input } from './input'
-import Node, { NodeType } from './Node'
+import Token, { TokenType } from '../lib/Token'
+import Node, { NodeType } from '../lib/Node'
 import clone from '@ungap/structured-clone'
 import astToXml from './astToXml'
+import { getInputLines } from "../lib/util";
+import { xmlToToken } from "./xmlToToken";
 
 /**
  * Minimal TypeScript implementation for p3. I took the recursive
@@ -100,6 +101,8 @@ function parse(tokens: Token[]): Node[] {
   }
   return nodes
 }
+
+const input = getInputLines<Token>('p2/out.scan', xmlToToken)
 
 for (const expr of parse(input)) {
   console.log(astToXml(expr))

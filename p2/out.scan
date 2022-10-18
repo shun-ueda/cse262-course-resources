@@ -1,0 +1,24 @@
+<Lparen />
+<Identifier val="+" />
+<Identifier val="1" />
+<Lparen />
+<Identifier val="+" />
+<Identifier val="2" />
+<Lparen />
+<Identifier val="+" />
+<Identifier val="3" />
+<Identifier val="4" />
+<Rparen />
+<Identifier val="5" />
+<Rparen />
+<Lparen />
+<Identifier val="+" />
+<Identifier val="6" />
+<Identifier val="7" />
+<Rparen />
+<Rparen />
+<Lparen />
+<Identifier val="+" />
+<Identifier val="8" />
+<Identifier val="9" />
+<Rparen />

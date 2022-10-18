@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node parser.ts",
+    "scan": "ts-node p2/scanner.ts > p2/out.scan",
+    "parse": "ts-node p3/parser.ts > p3/out.parse",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write"
   },
   "devDependencies": {

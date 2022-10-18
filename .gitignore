@@ -1,3 +1,6 @@
+*.scan
+*.parse
+
 ### Node template
 # Logs
 logs
